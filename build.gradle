@@ -1,0 +1,36 @@
+
+apply plugin : 'groovy'
+apply plugin : 'java'
+apply plugin : 'idea'
+apply plugin : 'eclipse'
+apply plugin : 'war'
+apply plugin : 'jetty'
+
+logging.captureStandardOutput LogLevel.QUIET
+
+sourceSets.main.java.srcDirs = [] // ie there's no stand-alone java source
+sourceSets.main.groovy.srcDir 'src/main/java' // ie include the 'java' rceSets.main.groovy.srcDir 'src/main/java'
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.6'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    groovy 'org.codehaus.groovy:groovy-all:2.1.5'
+    compile 'org.glassfish.jersey.core:jersey-server:2.0'
+    compile 'org.glassfish.jersey.containers:jersey-container-servlet-core:2.0'
+    compile 'org.codehaus.groovy:groovy-all:2.1.5'
+    compile 'com.alibaba:fastjson:1.1.32'
+    compile 'org.glassfish.jersey.media:jersey-media-json-jackson:2.0'
+
+
+}
+
+jettyRun {
+    httpPort = 9090
+}

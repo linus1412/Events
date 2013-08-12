@@ -1,0 +1,35 @@
+<p>This is the events view.</p>
+
+<h3>Show an event</h3>
+<form class="form-search form-horizontal">
+    <label>Event ID</label> <input type="text" name="id" ng-model="id" class="search-query"/>
+    <button ng-click="findEvent()" class="btn">Retrieve</button>
+    <hr>
+    <section ng-cloak>
+
+        <div class="control-group">
+            <label class="control-label">ID</label>
+            <div class="control">
+                <div>{{ eventData.id }}</div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Description</label>
+            <div class="control">
+                <input ng-model="eventData.description"/>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Date</label>
+            <div class="control">
+                <input ui-date ui ng-model="dateAsDate"/>
+            </div>
+        </div>
+
+    </section>
+</form>
+
+
+{{id}}

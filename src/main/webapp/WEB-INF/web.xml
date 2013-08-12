@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+    <servlet>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>uk.co.smitek.resources.RestApplication</param-value>
+        </init-param>
+    </servlet>
+
+    <!-- This is to stop jetty locking files on windows -->
+    <!-- Tomcat will complain about this - just remove for tomcat deployment -->
+    <servlet>
+        <!-- Override init parameter to avoid nasty -->
+        <!-- file locking issue on windows.         -->
+        <servlet-name>default</servlet-name>
+        <init-param>
+            <param-name>useFileMappedBuffer</param-name>
+            <param-value>false</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
