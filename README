@@ -1,1 +1,8 @@
-This file was created by IntelliJ IDEA 12.1.4 for binding GitHub repository
+Sample Jersey 2 and Angular JS application.
+
+Setup you IDE with either 
+  gradlew eclipse
+    or
+  gradlew idea
+  
+Yeoman/Bower is used for JavaScript dependencies
