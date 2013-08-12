@@ -3,7 +3,7 @@
 angular.module('webappApp')
   .controller('EventsCtrl', function ($scope, $resource) {
 
-        var Event = $resource('/untitled/rest/events/:id');
+        var Event = $resource('/Events/rest/events/:id');
         $scope.eventData = {};
 
         $scope.id = null;
