@@ -5,4 +5,4 @@ Setup you IDE with either
     or
   gradlew idea
   
-Yeoman/Bower is used for JavaScript dependencies
+Yeoman/Bower is used for JavaScript dependencies.  Install it via the instructions here http://yeoman.io/ (You don't need the Ruby or Compass bit)
